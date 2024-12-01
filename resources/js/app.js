@@ -110,4 +110,12 @@ function scrollUp() {
     container.innerHTML = `<h1 class="text-md sm:text-md font-semibold leading-8 text-gray-900 mb-2">${greeting}</h1>`;
   });
 
+  document.querySelectorAll('img').forEach((img) => {
+    img.addEventListener('dragstart', (event) => {
+        event.preventDefault(); // Mencegah drag
+    });
 
+    img.addEventListener('contextmenu', (event) => {
+        event.preventDefault(); // Mencegah klik kanan
+    });
+  });

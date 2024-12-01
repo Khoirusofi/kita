@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+img {
+    visibility: visible;
+}
+img::before {
+    content: '';
+    position: absolute;
+    visibility: hidden;
+}

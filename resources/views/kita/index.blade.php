@@ -89,10 +89,6 @@
             <!-- Music Player Section -->
             <div class="flex-1 p-4 bg-white rounded-lg shadow-lg">
                 <div class="flex flex-col items-center">
-                    <!-- Album Cover -->
-                    {{-- <img id="albumCover" src="https://via.placeholder.com/256" alt="Album Cover"
-                        class="w-64 h-64 mx-auto rounded-lg mb-4"> --}}
-                    <!-- Song Title -->
                     <h2 id="songTitle" class="text-xl font-semibold text-center mb-2">No Title</h2>
                     <!-- Artist Name -->
                     <p id="artistName" class="text-gray-600 text-sm text-center mb-4">No Artist</p>
@@ -288,7 +284,6 @@
                         @endif
                     </p>
                 </div>
-
                 <!-- Tambahkan field lain sesuai dengan kebutuhan -->
             </div>
 
@@ -296,37 +291,16 @@
             <div class="grid grid-cols-2 gap-4 mt-8 lg:grid-cols-2 lg:gap-6 lg:mt-0">
                 @foreach (['img1', 'img2', 'img3', 'img4'] as $imageField)
                     @if ($content->$imageField)
-                        <a href="{{ Storage::url('content/' . $content->$imageField) }}" data-lightbox="gallery"
-                            data-title="office content {{ $loop->iteration }}">
-                            <div class="relative h-48 w-full overflow-hidden rounded-lg">
-                                <img class="object-cover w-full h-full"
-                                    src="{{ Storage::url('content/' . $content->$imageField) }}"
-                                    alt="office content {{ $loop->iteration }}">
-                            </div>
-                        </a>
+                        <div class="relative h-48 w-full overflow-hidden rounded-lg">
+                            <img class="object-cover w-full h-full"
+                                src="{{ Storage::url('content/' . $content->$imageField) }}"
+                                alt="office content {{ $loop->iteration }}">
+                        </div>
                     @endif
                 @endforeach
             </div>
         </section>
     @endforeach
-
-    {{-- <section class="py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:gap-16 lg:py-16 lg:px-6">
-        <!-- Image Grid -->
-        <div class="grid grid-cols-2 gap-4 lg:grid-cols-2 lg:gap-6 lg:order-1 lg:mt-0">
-            @foreach ($content as $imageField)
-                <img class="w-full h-48 object-cover rounded-lg"
-                    src="{{ Storage::url('content/' . $content->$imageField) }}" alt="static content image">
-            @endforeach
-        </div>
-        <!-- Text Content -->
-        <div class="text-gray-500 sm:text-lg lg:order-2">
-            <h2 class="mb-4 mt-4 text-2xl font-extrabold text-gray-900">We didn't reinvent the wheel</h2>
-            <p class="mb-4">We are strategists, designers and developers. Innovators and problem solvers. Small
-                enough to be simple and quick, but big enough to deliver the scope you want at the pace you need.</p>
-            <p>We are strategists, designers and developers. Innovators and problem solvers. Small enough to be
-                simple and quick.</p>
-        </div>
-    </section> --}}
 
     <section class="galeri max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16" id="galeri">
         <div class="max-w-5xl mx-auto text-center">
